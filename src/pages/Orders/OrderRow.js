@@ -29,17 +29,14 @@ const OrderRow = ({ order, haldleDelet }) => {
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold">{customarName}</div>
-                        <div className="text-sm opacity-50">{price}</div>
+                        <div className="font-bold">{serviceName}</div>
+                        <div className="text-sm opacity-50">Price : ${price}</div>
                     </div>
                 </div>
             </td>
             <td>
-                {serviceName}
-                <br />
-                <span className="badge badge-ghost badge-sm">{price}</span>
+                {customarName}
             </td>
-            <td>email</td>
             <th>
                 <button className="btn btn-ghost btn-xs">{email}</button>
             </th>

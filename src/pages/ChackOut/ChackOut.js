@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const ChackOut = () => {
@@ -52,7 +52,7 @@ const ChackOut = () => {
                 <input name="email" type="email" placeholder="Your email" className="input input-bordered " defaultValue={user?.email} readOnly />
             </div>
             <textarea name="message" className="textarea textarea-bordered my-4 w-full" placeholder="your Message"></textarea>
-            <Link><input className='btn mb-8' type="submit" value="submit " /></Link>
+            <input className='btn mb-8' type="submit" value="submit " />
         </form>
     );
 };

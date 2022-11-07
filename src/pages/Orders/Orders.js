@@ -8,7 +8,11 @@ const Orders = () => {
     console.log(orders)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('car-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
@@ -32,15 +36,16 @@ const Orders = () => {
 
     }
     return (
+
         <div>
-            <h2>yur have {orders.length} orders</h2>
+            <h2>you have {orders.length} orders</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Delete</th>
+                            <th>Your order</th>
+                            <th>User Name</th>
                             <th>info</th>
                         </tr>
                     </thead>
